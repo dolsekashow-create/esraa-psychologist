@@ -25,8 +25,7 @@ export const site = {
   // صور من Unsplash (مجانية للاستخدام التجاري)
   aboutImage: "/images/photos/about.jpg",
   sessionImage: "/images/photos/session.jpg",
-  // TODO: لو فيه صورة شخصية حطها في public/images/esraa.jpg وغيّر القيمة لـ "/images/esraa.jpg"
-  photo: null as string | null,
+  photo: "/images/esraa.jpg" as string | null,
 
   sessionMinutes: 50,
 

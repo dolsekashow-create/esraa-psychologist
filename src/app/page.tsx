@@ -35,7 +35,7 @@ function HeroVisual() {
           fill
           priority
           sizes="(min-width: 1024px) 380px, 80vw"
-          className={site.photo ? "object-cover" : "object-contain p-6"}
+          className={site.photo ? "object-cover object-[center_18%]" : "object-contain p-6"}
         />
       </div>
       <Sprig className="absolute -end-4 bottom-2 h-40 -rotate-12 sm:-end-8" />
@@ -127,8 +127,8 @@ export default function Home() {
               <div className="absolute -inset-4 rotate-3 rounded-[2.5rem] bg-gold-soft" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-lg">
                 <Image
-                  src={site.photo ?? site.aboutImage}
-                  alt={site.photo ? site.name : "ركن هادي للجلسات"}
+                  src={site.aboutImage}
+                  alt="ركن هادي للجلسات"
                   fill
                   sizes="(min-width: 640px) 384px, 80vw"
                   className="object-cover"
