@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* ألوان اللوجو: أخضر غامق للثقة، ودهبي للفخامة، ووردي هادي للدفء */
+:root {
+  --bg: #fbf7f2;
+  --surface: #ffffff;
+  --surface-2: #f5eee6;
+  --ink: #1f332b;
+  --muted: #5f6e67;
+  --line: #ebe3d8;
+  --primary: #2d5344;
+  --primary-ink: #ffffff;
+  --primary-soft: #e5eee8;
+  --accent: #b05f69;
+  --accent-soft: #f8e7e7;
+  --gold: #c29a55;
+  --gold-soft: #f4ead8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111916;
+    --surface: #17221d;
+    --surface-2: #1c2923;
+    --ink: #eef2ee;
+    --muted: #a5b3ac;
+    --line: #2a3a33;
+    --primary: #8cc4ab;
+    --primary-ink: #10201a;
+    --primary-soft: #1f372d;
+    --accent: #e6a3aa;
+    --accent-soft: #3a2629;
+    --gold: #d9b878;
+    --gold-soft: #33301f;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--primary-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
