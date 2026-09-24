@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArticleArt } from "@/components/Art";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { articles, getArticle } from "@/lib/articles";
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/articles/[slug]">
     title: article.title,
     description: article.excerpt,
     alternates: { canonical: `/articles/${article.slug}` },
-    openGraph: { type: "article", title: article.title, description: article.excerpt },
+    openGraph: { type: "article", title: article.title, description: article.excerpt, images: [article.image] },
   };
 }
 
@@ -42,7 +42,9 @@ export default async function ArticlePage({ params }: PageProps<"/articles/[slug
           أ. {site.shortName} · قراءة {article.minutes.toLocaleString("ar-EG")} دقايق
         </p>
 
-        <ArticleArt kind={article.art} className="mt-10 aspect-[5/3] w-full overflow-hidden rounded-3xl" />
+        <div className="relative mt-10 aspect-[3/2] overflow-hidden rounded-3xl">
+          <Image src={article.image} alt="" fill priority sizes="(min-width: 768px) 720px, 95vw" className="object-cover" />
+        </div>
 
         <div className="mt-10 space-y-8 text-lg leading-loose">
           {article.sections.map((s, i) => (

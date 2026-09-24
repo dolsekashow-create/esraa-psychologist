@@ -22,6 +22,9 @@ export const site = {
 
   logo: "/images/logo-mark.png",
   logoFull: "/images/logo.png",
+  // صور من Unsplash (مجانية للاستخدام التجاري)
+  aboutImage: "/images/photos/about.jpg",
+  sessionImage: "/images/photos/session.jpg",
   // TODO: لو فيه صورة شخصية حطها في public/images/esraa.jpg وغيّر القيمة لـ "/images/esraa.jpg"
   photo: null as string | null,
 
@@ -74,32 +77,32 @@ export const services = [
   {
     title: "القلق والتوتر",
     body: "نوبات القلق، والتفكير الزائد، والخوف اللي بيوقف حياتك. نتعلم سوا أدوات عملية تهدّي عقلك وجسمك.",
-    icon: "wave",
+    image: "/images/photos/anxiety.jpg",
   },
   {
     title: "الحزن وفقدان الشغف",
     body: "لما الأيام تبقى تقيلة وتحس إنك مش نفسك. مساحة آمنة تفهم فيها اللي بيحصلك وتبدأ ترجع خطوة بخطوة.",
-    icon: "sun",
+    image: "/images/photos/sadness.jpg",
   },
   {
     title: "العلاقات والزواج",
     body: "خلافات متكررة، وصعوبة في التواصل، أو علاقة مرهقة. نفهم الأنماط ونبني طرق تواصل أصح.",
-    icon: "hearts",
+    image: "/images/photos/relationships.jpg",
   },
   {
     title: "الضغوط والاحتراق النفسي",
     body: "شغل ومسؤوليات مالهاش آخر. نرتّب أولوياتك ونحط حدود تحميك من الاستنزاف.",
-    icon: "flame",
+    image: "/images/photos/burnout.jpg",
   },
   {
     title: "الثقة بالنفس",
     body: "الصوت الداخلي اللي بينتقدك طول الوقت. نشتغل على تقدير الذات وإنك تشوف نفسك بعين أرحم.",
-    icon: "star",
+    image: "/images/photos/confidence.jpg",
   },
   {
     title: "الإرشاد الأسري والتربوي",
     body: "تحديات تربية الأطفال والمراهقين، والتوتر جوه البيت. خطوات واضحة لبيت أهدى.",
-    icon: "home",
+    image: "/images/photos/family.jpg",
   },
 ] as const;
 

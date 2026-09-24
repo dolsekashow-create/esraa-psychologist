@@ -30,12 +30,11 @@ export function SessionMockup() {
           </span>
         </div>
 
-        <div className="relative mx-3 aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-[#2d5344] via-[#284a3d] to-[#1c3329]">
-          <div className="absolute inset-0 grid place-items-center">
-            <div className="relative size-40">
-              <div className="absolute -inset-3 animate-[spin_24s_linear_infinite] rounded-full border border-dashed border-[#c29a55]/40" />
-              <Image src={site.logo} alt="" fill sizes="160px" className="object-contain drop-shadow-xl" />
-            </div>
+        <div className="relative mx-3 aspect-[4/3] overflow-hidden rounded-2xl bg-[#1c3329]">
+          <Image src={site.sessionImage} alt="" fill sizes="(min-width: 1024px) 420px, 90vw" className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+          <div className="absolute start-3 top-3 size-12 rounded-full bg-white/90 p-1 shadow">
+            <Image src={site.logo} alt="" width={48} height={48} className="size-full object-contain" />
           </div>
           <span className="absolute start-3 bottom-3 rounded-full bg-black/35 px-3 py-1 text-xs text-white backdrop-blur">
             أ. {site.shortName}

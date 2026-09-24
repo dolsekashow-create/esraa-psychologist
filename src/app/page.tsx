@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArticleArt, LeafPattern, Sprig } from "@/components/Art";
+import { LeafPattern, Sprig } from "@/components/Art";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -125,8 +125,17 @@ export default function Home() {
           <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-2">
             <div className="relative mx-auto w-full max-w-xs sm:max-w-sm">
               <div className="absolute -inset-4 rotate-3 rounded-[2.5rem] bg-gold-soft" />
-              <div className="relative rounded-[2.5rem] bg-bg p-10">
-                <Image src={site.logoFull} alt={site.name} width={900} height={998} className="h-auto w-full" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-lg">
+                <Image
+                  src={site.photo ?? site.aboutImage}
+                  alt={site.photo ? site.name : "ركن هادي للجلسات"}
+                  fill
+                  sizes="(min-width: 640px) 384px, 80vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -end-5 -bottom-5 size-24 rounded-full bg-surface p-2 shadow-lg">
+                <Image src={site.logo} alt="" width={96} height={96} className="size-full object-contain" />
               </div>
             </div>
             <div>
@@ -166,13 +175,22 @@ export default function Home() {
             {services.map((s) => (
               <article
                 key={s.title}
-                className="group rounded-3xl border border-line bg-surface p-7 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
+                className="group rounded-3xl border border-line bg-surface p-3 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-md"
               >
-                <span className="grid size-12 place-items-center rounded-2xl bg-primary-soft text-primary transition group-hover:bg-primary group-hover:text-primary-ink">
-                  <Icon name={s.icon} />
-                </span>
-                <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                  <Image
+                    src={s.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/25 to-transparent" />
+                </div>
+                <div className="px-4 pt-5 pb-4">
+                <h3 className="font-display text-xl font-semibold">{s.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{s.body}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -217,8 +235,14 @@ export default function Home() {
                 href={`/articles/${a.slug}`}
                 className="group overflow-hidden rounded-3xl border border-line bg-surface transition hover:-translate-y-1 hover:shadow-md"
               >
-                <div className="overflow-hidden">
-                  <ArticleArt kind={a.art} className="aspect-[5/3] w-full transition duration-500 group-hover:scale-105" />
+                <div className="relative aspect-[5/3] overflow-hidden">
+                  <Image
+                    src={a.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 360px, 90vw"
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <p className="text-xs text-muted">قراءة {a.minutes.toLocaleString("ar-EG")} دقايق</p>

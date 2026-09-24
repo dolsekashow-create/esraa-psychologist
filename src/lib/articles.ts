@@ -1,11 +1,9 @@
-import type { ArtKind } from "@/components/Art";
-
 export type Article = {
   slug: string;
   title: string;
   excerpt: string;
   minutes: number;
-  art: ArtKind;
+  image: string;
   sections: { heading?: string; paragraphs?: string[]; list?: string[] }[];
 };
 
@@ -15,7 +13,7 @@ export const articles: Article[] = [
     title: "٣ خطوات تهدّي بيها نوبة القلق في لحظتها",
     excerpt: "لما قلبك يدق بسرعة ونفسك يتقطع، جسمك فاكر إنه في خطر. دي أدوات بسيطة تقول لجسمك: أنا في أمان.",
     minutes: 4,
-    art: "breath",
+    image: "/images/photos/article-breath.jpg",
     sections: [
       {
         paragraphs: [
@@ -58,7 +56,7 @@ export const articles: Article[] = [
     title: "التفكير الزايد: ليه بيحصل وإزاي توقف الدوامة",
     excerpt: "دماغك مش راضية تسكت، وبتعيد نفس الموقف ١٠٠ مرة؟ ده مش ضعف. ده عادة ينفع تتغير.",
     minutes: 5,
-    art: "thoughts",
+    image: "/images/photos/article-thoughts.jpg",
     sections: [
       {
         paragraphs: [
@@ -96,7 +94,7 @@ export const articles: Article[] = [
     title: "إمتى تحتاج تكلّم أخصائي نفسي؟",
     excerpt: "مش لازم تستنى لما توصل للآخر. دي علامات بتقولك إن الدعم هيفرق معاك.",
     minutes: 3,
-    art: "path",
+    image: "/images/photos/article-talk.jpg",
     sections: [
       {
         paragraphs: [
